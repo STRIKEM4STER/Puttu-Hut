@@ -1,0 +1,551 @@
+html, body{
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+body{
+    background-color: black;
+}
+
+*{
+    margin: 0px;
+    padding: 0px;
+    font-family: "Poppins", sans-serif; 
+}
+
+#container{
+    width: 100%;
+    height: 100vh;
+    position: relative;
+}
+
+/* navbar and header*/
+nav{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+#logo{
+    height: 150px;
+    width: 150px;
+    margin-left: 50px;
+}
+
+nav ul{
+    margin-right: 70px;
+}
+
+.list-items{
+    display: inline-block;
+    margin: 10px 30px;
+}
+
+.list-items a{
+    color: orange;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.list-items a:hover{
+    color: white
+}
+
+/* header */
+header{
+    color: orange;
+    background-image: url(./images/puttu-header.jpg);
+    height: 70vh;
+    background-size: cover;
+    background-position: bottom;
+}
+
+#welcome {
+    margin-top: 100px;
+    background-color: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column; 
+}
+
+/* specials button */
+#specials{
+    background-color: orange;
+    color: black;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 50px;
+    margin-top: 20px;
+    transition: background-color 0.3s ease, color 0.3s ease, text-shadow 0.3s ease;
+}
+
+#specials:hover{
+    background-color: white;
+    color: orange;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+header h1, header h2 {
+    color: orange;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); 
+}
+
+
+/* about section */
+#about{
+    background-color: black;
+}
+
+#abt-box{
+    background-color: rgba(255, 255, 255, 0.200);
+    margin: 9% 8%;
+    border: 1px solid white;
+    border-radius: 25px;
+    padding: 15px;
+    box-shadow: 2px 4px 8px rgba(255, 165, 0, 0.8);
+}
+
+#about-title{
+    color: white;
+    text-align: center;
+    font-size: 30px;
+}
+
+#about-title span{
+    color: orange;
+}
+
+#abt-para{
+    margin-top: 15px;
+    padding: 10px;
+    font-size: 20px;
+    color: orange;
+    text-align: justify;
+}
+
+#about-content{
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    column-gap: 30px;
+}
+
+
+
+#abt-img{
+    position: relative;
+    width: 100%;
+    height: 500x;
+    overflow: hidden;
+    border: 1px;
+    border-radius: 25px;
+}
+
+#abt-img img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0; /* Start with all images hidden */
+    transition: opacity 1s ease-in-out; /* Add transition for fade effect */
+}
+
+#img1 {
+    opacity: 1; /* Show the first image */
+}
+
+@keyframes fade {
+    0%, 25% {
+        opacity: 1; /* Show the image for 25% of the time */
+    }
+    30%, 100% {
+        opacity: 0; /* Hide the image after 30% */
+    }
+}
+
+/* Applying the fade animation to each image with different delays */
+#img1 {
+    animation: fade 16s infinite; /* Show for 4 seconds */
+}
+
+#img2 {
+    animation: fade 16s infinite;
+    animation-delay: 4s; /* Delay the start of img2 */
+}
+
+#img3 {
+    animation: fade 16s infinite;
+    animation-delay: 8s; /* Delay the start of img3 */
+}
+
+#img4 {
+    animation: fade 16s infinite;
+    animation-delay: 12s; /* Delay the start of img4 */
+}
+
+
+/* menu section */
+
+#menu {
+    border: 1px solid rgb(255, 255, 255); 
+    border-radius: 15px;
+    padding: 20px; 
+    margin: 40px auto; 
+    width: 90%; 
+    box-shadow: 4px 4px 10px rgba(255, 165, 0, 0.6);
+}
+
+#menu-title{
+    color: orange;
+    text-align: center;
+    font-size: 30px;
+}
+
+#menu-items {
+    color: orange;
+    text-align: center;
+    margin: 20px 0;
+}
+
+#specials-cards {
+    display: flex;
+    justify-content: space-around;
+    margin: 20px 8%;
+    flex-wrap: wrap; /* Allow cards to wrap on smaller screens */
+}
+
+.special-card {
+    background-color: rgba(255, 255, 255, 0.2); 
+    border: 1px solid orange; 
+    border-radius: 15px; 
+    padding: 20px;
+    width: 25%; 
+    box-shadow: 2px 4px 8px rgba(255, 165, 0, 0.6); 
+    text-align: center;
+    margin: 0 20px 40px 20px;
+    min-height: 400px; 
+    transition: transform 0.3s ease, box-shadow 0.3s ease; 
+}
+
+.special-card:hover {
+    transform: scale(1.07); 
+    box-shadow: 6px 12px 20px rgba(255, 165, 0, 0.8); 
+}
+
+.special-card img {
+    width: 100%; 
+    height: 250px; 
+    border-radius: 10px; 
+    object-fit: cover; 
+    transition: transform 0.5s ease;
+}
+
+.special-card:hover img {
+    transform: scale(1.1); 
+}
+
+.special-card h3 {
+    color: orange;
+    margin: 10px 0;
+    transition: color 0.3s ease; 
+}
+
+.special-card:hover h3 {
+    color: white; 
+}
+
+.special-card p {
+    color: white; 
+    font-size: 14px; 
+    transition: opacity 0.3s ease; 
+}
+
+.special-card:hover p {
+    opacity: 0.8; 
+}
+
+
+/* sides */
+#sides-title {
+    color: orange;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.sides-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: nowrap;
+    height: 400px;
+}
+
+.side-card {
+    width: 80px;
+    border-radius: 15px;
+    background-size: cover;
+    background-position: center;
+    cursor: pointer;
+    overflow: hidden;
+    margin: 0 10px;
+    display: flex;
+    align-items: flex-end;
+    transition: 0.6s cubic-bezier(.28,-0.03,0,.99);
+    box-shadow: 0px 10px 30px -5px rgba(255, 165, 0, 0.8);
+}
+
+.side-content {
+    display: flex;
+    flex-wrap: nowrap;
+    color: white;
+}
+
+.side-icon {
+    background: #223;
+    color: white;
+    border-radius: 50%;
+    width: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 15px;
+}
+
+.side-description {
+    display: flex;
+    flex-direction: column;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.3s ease;
+    width: 300px;
+    margin-left: 10px;
+}
+
+.side-description h4 {
+    text-transform: uppercase;
+    margin: 5px 0;
+}
+
+.side-description p {
+    color:rgb(255, 166, 0);
+    text-shadow:2px 2px 4px rgba(0, 0, 0, 1.8);
+}
+
+input {
+    display: none;
+}
+
+input:checked + label {
+    width: 300px;
+}
+
+input:checked + label .side-description {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+input:checked + label .side-icon {
+    background-color: orange;
+}
+
+
+label[for="s1"] {
+    background-image: url('./images/beef\ curry.jpg');
+}
+
+label[for="s2"] {
+    background-image: url('./images/chicken\ curry.jpg');
+}
+
+label[for="s3"] {
+    background-image: url('./images/mutton\ curry.jpg');
+}
+label[for="s4"] {
+    background-image: url('./images/fish\ curry.webp');
+}
+
+label[for="s5"] {
+    background-image: url('./images/kadala\ curry.jpg');
+}
+
+label[for="s6"] {
+    background-image: url('./images/mutta\ roast.webp');
+}
+
+
+
+.menu-list-card {
+    border: 2px solid orange; 
+    border-radius: 15px; 
+    padding: 20px;
+    width: 760px; 
+    background-color: rgba(255, 255, 255, 0.2); 
+    margin: 60px auto; 
+    text-align: center;
+    box-shadow: 2px 4px 8px rgba(255, 165, 0, 0.6); 
+    height: 500px;
+}
+
+.menu-list-card h3 {
+    color: orange;
+    margin-bottom: 15px;
+    font-size: 24px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+.menu-container {
+    display: flex; 
+    justify-content: center; 
+    align-items: flex-start; 
+}
+
+.menu-section {
+    margin: 0 20px; 
+    flex: 1; /* Equal space for each section */
+}
+
+.menu-section h4 {
+    color: orange;
+    margin-bottom: 10px;
+    font-size: 20px;
+}
+
+.menu-section ul {
+    list-style-type: none; 
+    padding: 0;
+}
+
+.menu-section li {
+    color: white;
+    font-size: 18px;
+    margin: 10px 0;
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.5); 
+    border-radius: 10px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.menu-section li:hover {
+    background-color: orange;
+    transform: scale(1.05); 
+    color: black;
+}
+
+.vertical-line {
+    border-left: 2px solid orange;
+    height: 400px; 
+    margin: 0 20px; 
+}
+
+/* reviews styling */
+#reviews {
+    background-image: linear-gradient(to bottom, #000000, #555555);
+    color: white; 
+    padding: 40px 0;
+    text-align: center;
+}
+
+#reviews h2{
+    color: orange;
+    font-size: 30px;
+    margin-bottom: 40px;
+}
+
+.review-cards {
+    display: flex;
+    justify-content: space-around; 
+    flex-wrap: wrap; 
+}
+
+.review-card {
+    background-color:black; 
+    border: 1px solid orange; 
+    border-radius: 15px; 
+    padding: 20px;
+    margin: 10px; 
+    width: 250px; 
+    height: 350px;
+    box-shadow: 2px 4px 8px rgba(255, 165, 0, 0.6);
+} 
+
+.review-image {
+    width: 200px;
+    height: 200px; 
+    border-radius: 50%; 
+    object-fit: cover; 
+    margin-bottom: 15px;
+}
+
+/* contact section */
+#contact {
+    background-image: url('https://img.freepik.com/premium-photo/amazonian-spice-herb-mix-food-photography_1032986-2770.jpg');
+    background-size: cover; 
+    background-position: center; 
+    color: white;
+    padding: 40px 0;
+    text-align: center; 
+    position: relative; 
+}
+
+#footer-logo-container {
+    position: absolute; 
+    top: 20px; 
+    left: 20px; 
+}
+
+#footer-logo {
+    width: 150px; 
+}
+
+#map {
+    display: flex; 
+    justify-content: center; 
+}
+
+#contact iframe {
+    border: 3px solid orange;
+    border-radius: 10px;
+    box-shadow: 4px 4px 8px rgba(255, 165, 0, 0.6);
+    width: 100%; 
+    max-width: 600px; 
+    height: 350px; 
+}
+
+#footer-info {
+    text-align: center; 
+    margin-top: 20px; 
+}
+
+#contact ul {
+    list-style: none;
+    padding: 0;
+    margin: 20px 0;
+    display: flex;
+    justify-content: center; 
+    gap: 30px;
+}
+
+#contact ul li i {
+    color: orange;
+    font-size: 32px;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+#contact ul li i:hover {
+    transform: scale(1.2);
+    color: white;
+}
+
+#contact p {
+    color: white;
+    margin-top: 20px;
+}
+
+#footer-info p {
+    color: rgba(255, 255, 255, 0.49); 
+    margin: 30px 0; 
+    font-size: 14px; 
+}
+
